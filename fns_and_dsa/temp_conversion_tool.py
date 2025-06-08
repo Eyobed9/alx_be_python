@@ -13,10 +13,15 @@ def main():
     temp = float(input("Enter the temperature to convert: "))
     scale = input("Is this temperature in Celsius or Fahrenheit? (C/F): ")
     
-    if scale.upper() == "F":
-        convert_to_celsius(temp)
-    elif scale.upper() == "C":
-        convert_to_fahrenheit(temp)
+    try:
+        if scale.upper() == "F":
+            convert_to_celsius(temp)
+        elif scale.upper() == "C":
+            convert_to_fahrenheit(temp)
+        else:
+            print("Please enter a valid scale.")
+    except ValueError:
+        print("Invalid temperature. Please enter a numeric value.")
     
 if __name__ == "__main__":
     main()
