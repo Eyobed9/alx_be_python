@@ -1,6 +1,7 @@
 import unittest
 from unittest.mock import patch
 import main
+
 # from robust_division_calculator import safe_divide
 
 class TestDivision(unittest.TestCase):
@@ -21,5 +22,7 @@ class TestDivision(unittest.TestCase):
         with patch("builtins.print") as mocked_print:
             main.main()
             mocked_print.assert_called_with("Error: Please enter numeric values only.")
+
+
 if __name__ == "__main__":
     unittest.main()
